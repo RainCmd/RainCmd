@@ -19,4 +19,5 @@
 </picture>
 
 </td>
+</table>
 
