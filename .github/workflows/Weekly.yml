@@ -35,4 +35,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Update result from weekly script execution" || true
-        git push
+        git push https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
