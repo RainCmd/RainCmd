@@ -1,4 +1,5 @@
 
+<table width="960px">
 <td valign="top" width="50%">
 
 <picture>
