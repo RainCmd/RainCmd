@@ -1,4 +1,4 @@
-name: Weekly Script Execution
+name: daily execution
 
 on:
   schedule:
