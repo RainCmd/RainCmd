@@ -29,10 +29,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-    - name: Commit and push results
-      run: |
-        git config --global  user.email "action@github.com"
-        git config --global  user.name "GitHub Action"
+    - name: Commit and push if changed
+      run: |-
         git add .
-        git commit -m "Update result from weekly script execution" || true
-        git push 
+        git diff
+        git config --global user.email "github-action-bot@example.com"
+        git config --global user.name "GitHub Action Bot"
+        git commit -m "Updated README" -a || echo "No changes to commit"
+        git push
