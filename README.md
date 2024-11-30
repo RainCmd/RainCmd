@@ -1,4 +1,3 @@
-![](https://github-readme-activity-graph.vercel.app/graph?username=RainCmd&hide_border=true&hide_title=true&bg_color=0000&color=0000&line=07ff&area=true&area_color=07ff&point=0000&days=90)
 <div align='center'>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RainCmd/RainCmd/blob/main/generated/overview-dark.svg">
