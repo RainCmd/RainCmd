@@ -27,7 +27,6 @@ jobs:
       run: python generate_images.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
     - name: Commit and push if changed
       run: |-
