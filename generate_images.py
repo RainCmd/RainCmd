@@ -99,6 +99,7 @@ async def main() -> None:
         # access_token = os.getenv("GITHUB_TOKEN")
         raise Exception("A personal access token is required to proceed!")
     user = os.getenv("GITHUB_ACTOR")
+
     exclude_repos = os.getenv("EXCLUDED")
     exclude_repos = ({x.strip() for x in exclude_repos.split(",")}
                      if exclude_repos else None)
@@ -108,6 +109,7 @@ async def main() -> None:
     async with aiohttp.ClientSession() as session:
         s = Stats(user, access_token, session, exclude_repos=exclude_repos,
                   exclude_langs=exclude_langs)
+        print(await s.to_str())
         await asyncio.gather(generate_languages("languages.svg", s), generate_overview("overview.svg", s))
         await asyncio.gather(generate_languages("languages-dark.svg", s), generate_overview("overview-dark.svg", s))
 
