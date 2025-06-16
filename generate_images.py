@@ -94,7 +94,7 @@ async def main() -> None:
     """
     Generate all badges
     """
-    access_token = os.getenv("GITHUB_TOKEN")
+    access_token = os.getenv("ACCESS_TOKEN")
     if not access_token:
         raise Exception("A personal access token is required to proceed!")
     user = os.getenv("GITHUB_ACTOR")
@@ -108,7 +108,6 @@ async def main() -> None:
     async with aiohttp.ClientSession() as session:
         s = Stats(user, access_token, session, exclude_repos=exclude_repos,
                   exclude_langs=exclude_langs)
-        print(await s.to_str())
         await asyncio.gather(generate_languages("languages.svg", s), generate_overview("overview.svg", s))
         await asyncio.gather(generate_languages("languages-dark.svg", s), generate_overview("overview-dark.svg", s))
 
